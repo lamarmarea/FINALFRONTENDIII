@@ -22,10 +22,10 @@ const Card = ({ odontologo, setFavsPageItems }) => {
     let newFavs = [];
     if (!favsStore.find(fav => fav.id === odontologo.id)) {
       newFavs = [...favsStore, odontologo];
-      alert("Agregado a favoritos")
+      alert("Added to favs")
     } else {
       newFavs = favsStore.filter(fav => fav.id !== odontologo.id);
-      alert("Eliminado de favoritos")
+      alert("Removed from favs")
     }
 
     updateFavs(newFavs);
@@ -41,7 +41,7 @@ const Card = ({ odontologo, setFavsPageItems }) => {
       <Link to={`/odontologo/${odontologo.id}`}><img src={imagenDoctor} alt="Imagen doctor" /></Link>
       <h2>{odontologo.name}</h2>
       <h4>{odontologo.username}</h4>
-      {/* <h4>{odontologo.id}</h4> */}
+      {}
       <button onClick={handleFavClick} className="favButton" style={{backgroundColor: state.btColor, fontSize:"1.4rem"}}>
       🦷
       </button>
